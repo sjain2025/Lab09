@@ -33,7 +33,7 @@ class Sprite extends RectF {
         this.color = color;
     }
 
-    public void update(Canvas canvas){
+    public void update(Canvas canvas) {
         if (left + dX < 0) {
             animationRow = RIGHT;
             dX *= -1;
