@@ -53,7 +53,7 @@ class Sprite extends RectF {
         offset(dX, dY);
     }
 
-    public void draw(Canvas canvas){
+    public void draw(Canvas canvas) {
         int iconWidth = bitmap.getWidth() / BMP_COLUMNS;
         int iconHeight = bitmap.getHeight() / BMP_ROWS;
         int srcX = 0;
@@ -90,6 +90,22 @@ class Sprite extends RectF {
         return bitmap;
     }
 
+    public float getCenterX() {
+        return (left + right) / 2;
+    }
+
+    public float getCenterY() {
+        return (top + bottom) / 2;
+    }
+
+    public float getSpriteWidth() {
+        return right - left;
+    }
+
+    public float getSpriteHeight() {
+        return bottom - top;
+    }
+
     public void setBitmap(Bitmap bitmap) {
         this.bitmap = bitmap;
     }
@@ -97,5 +113,10 @@ class Sprite extends RectF {
     public void grow(int i) {
         right = right + i;
         bottom = bottom + i;
+    }
+
+    public void shrink(int i) {
+        right = right - i;
+        bottom = bottom - i;
     }
 }
